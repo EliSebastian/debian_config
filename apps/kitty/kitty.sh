@@ -14,7 +14,10 @@ sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/kitty.app/bin/kitty|g" ~/.loca
 # Make xdg-terminal-exec (and hence desktop environments that support it use kitty)
 echo 'kitty.desktop' > ~/.config/xdg-terminals.list
 
+KITTY_PATH="/home/$USER/.config/kitty"
+KITTY_PROJECT_PATH="/apps/kitty"
+
 # add config
-cp ./kitty.conf /home/$USER/.config/kitty/kitty.conf
-cp ./current-theme.conf /home/$USER/.config/kitty/current-theme.conf
-cp ./launch_zellij.conf /home/$USER/.config/kitty/launch_zellij.conf
+cp $PROJECT_PATH/apps/kitty/kitty.conf $KITTY_PATH/kitty.conf
+cp $PROJECT_PATH/apps/kitty/current-theme.conf $KITTY_PATH/current-theme.conf
+cp $PROJECT_PATH/apps/kitty/launch_zellij.conf $KITTY_PATH/launch_zellij.conf
