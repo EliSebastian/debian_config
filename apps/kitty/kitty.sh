@@ -1,3 +1,6 @@
+KITTY_PATH="/home/$USER/.config/kitty"
+KITTY_PROJECT_PATH="/apps/kitty"
+
 # add config
 mkdir -p $KITTY_PATH
 cp $PROJECT_PATH/apps/kitty/kitty.conf $KITTY_PATH/kitty.conf
@@ -20,5 +23,3 @@ sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/kitty.app/bin/kitty|g" ~/.loca
 # Make xdg-terminal-exec (and hence desktop environments that support it use kitty)
 echo 'kitty.desktop' > ~/.config/xdg-terminals.list
 
-KITTY_PATH="/home/$USER/.config/kitty"
-KITTY_PROJECT_PATH="/apps/kitty"
