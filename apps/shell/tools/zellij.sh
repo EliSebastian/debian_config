@@ -16,4 +16,5 @@ chmod +x "$ZELLIJ_OUTPUT_DIR/zellij"
 
 ZELLIJ_CONFIG_DIR="$HOME/.config/zellij"
 
+mkdir -p $ZELLIJ_CONFIG_DIR
 cp $PROJECT_PATH/apps/shell/tools/config.kdl $ZELLIJ_CONFIG_DIR/config.kdl
