@@ -1,4 +1,3 @@
 #!/bin/bash
 
-# Execute the script in ./shell/shell.sh
-./shell/shell.sh
+source $PROJECT_PATH/apps/shell/shell.sh
