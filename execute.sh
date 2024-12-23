@@ -3,7 +3,7 @@
 sudo apt install curl -y
 sudo apt install git -y
 
-export PROJECT_PATH="/home/$(whoami)/tmp/debian_config"
+export PROJECT_PATH="/home/$USER/tmp/debian_config"
 
 mkdir -p $PROJECT_PATH
 
