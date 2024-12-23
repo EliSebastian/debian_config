@@ -7,10 +7,13 @@ URL=$(curl -s https://api.github.com/repos/zellij-org/zellij/releases/latest | j
 
 ZELLIJ_OUTPUT_DIR="$HOME/.local/bin"
 
-# Descargar el archivo
 curl -L -o "$ZELLIJ_OUTPUT_DIR/$FILENAME" "$URL"
 
 tar -xvf "$ZELLIJ_OUTPUT_DIR/$FILENAME" -C "$ZELLIJ_OUTPUT_DIR"
-# rm "$ZELLIJ_OUTPUT_DIR/$FILENAME"
+rm "$ZELLIJ_OUTPUT_DIR/$FILENAME"
 
 chmod +x "$ZELLIJ_OUTPUT_DIR/zellij"
+
+ZELLIJ_CONFIG_DIR="$HOME/.config/zellij"
+
+cp $PROJECT_PATH/apps/shell/tools/config.kdl $ZELLIJ_CONFIG_DIR/config.kdl
