@@ -1,3 +1,9 @@
+# add config
+mkdir -p $KITTY_PATH
+cp $PROJECT_PATH/apps/kitty/kitty.conf $KITTY_PATH/kitty.conf
+cp $PROJECT_PATH/apps/kitty/current-theme.conf $KITTY_PATH/current-theme.conf
+cp $PROJECT_PATH/apps/kitty/launch_zellij.conf $KITTY_PATH/launch_zellij.conf
+
 #Install Kitty
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 
@@ -16,8 +22,3 @@ echo 'kitty.desktop' > ~/.config/xdg-terminals.list
 
 KITTY_PATH="/home/$USER/.config/kitty"
 KITTY_PROJECT_PATH="/apps/kitty"
-
-# add config
-cp $PROJECT_PATH/apps/kitty/kitty.conf $KITTY_PATH/kitty.conf
-cp $PROJECT_PATH/apps/kitty/current-theme.conf $KITTY_PATH/current-theme.conf
-cp $PROJECT_PATH/apps/kitty/launch_zellij.conf $KITTY_PATH/launch_zellij.conf
