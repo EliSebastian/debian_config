@@ -6,6 +6,8 @@ echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$USER
 gsettings set org.gnome.desktop.screensaver lock-enabled false
 gsettings set org.gnome.desktop.session idle-delay 0
 
+mkdir -p $HOME/.local/bin
+
 source $PROJECT_PATH/apps/shell/shell.sh
 
 source $PROJECT_PATH/apps/kitty/kitty.sh
