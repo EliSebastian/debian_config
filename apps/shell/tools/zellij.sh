@@ -1,20 +1,9 @@
-# Get the arch and OS
+# Get the arch
 ARCH=$(uname -m)
-OS=$(uname -s)
 
-# Determinar el nombre del archivo según el sistema operativo y la arquitectura
-if [ "$OS" == "Darwin" ]; then
-  FILENAME="zellij-${ARCH}-apple-darwin.tar.gz"
-  URL="https://github.com/zellij-org/zellij/releases/latest/download/$FILENAME"
-  echo "Descargando Zellij para macOS..."
-elif [ "$OS" == "Linux" ]; then
-  FILENAME="zellij-${ARCH}-unknown-linux-musl.tar.gz"
-  URL="https://github.com/zellij-org/zellij/releases/latest/download/$FILENAME"
-  echo "Descargando Zellij para Linux..."
-else
-  echo "Sistema operativo no compatible: $OS"
-  exit 1
-fi
+FILENAME="zellij-$ARCH-unknown-linux-musl.tar.gz"
+
+URL=$(curl -s https://api.github.com/repos/zellij-org/zellij/releases/latest | jq -r ".assets[] | select(.name == \"$FILENAME\") | .browser_download_url")
 
 ZELLIJ_OUTPUT_DIR="$HOME/.local/bin"
 
