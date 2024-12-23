@@ -10,7 +10,7 @@ ZELLIJ_OUTPUT_DIR="$HOME/.local/bin"
 # Descargar el archivo
 curl -L -o "$ZELLIJ_OUTPUT_DIR/$FILENAME" "$URL"
 
-tar -xvf "$ZELLIJ_OUTPUT_DIR/$FILENAME"
+tar -xvf "$ZELLIJ_OUTPUT_DIR/$FILENAME" -C "$ZELLIJ_OUTPUT_DIR"
 rm "$ZELLIJ_OUTPUT_DIR/$FILENAME"
 
 chmod +x "$ZELLIJ_OUTPUT_DIR/zellij"
